@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../dtds/dtd/technicalContent/dtd/reference.dtd">
+<reference id="B-7">
+  <title>Technical Specifications for Chrono Timer</title>
+  <refbody>
+    <properties>
+      <property>
+        <proptype>Category</proptype>
+        <propvalue>Oscillator</propvalue>
+      </property>
+      <property>
+        <proptype>Voltage</proptype>
+        <propvalue>3.3V</propvalue>
+      </property>
+      <property>
+        <proptype>Protocol</proptype>
+        <propvalue>nan</propvalue>
+      </property>
+      <property>
+        <proptype>MaxSpeed</proptype>
+        <propvalue>100MHz</propvalue>
+      </property>
+      <property>
+        <proptype>ReleaseDate</proptype>
+        <propvalue>2022-07-21</propvalue>
+      </property>
+      <property>
+        <proptype>LeadEngineer</proptype>
+        <propvalue>L. Lamport</propvalue>
+      </property>
+    </properties>
+  </refbody>
+</reference>

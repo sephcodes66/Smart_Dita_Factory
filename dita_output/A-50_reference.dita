@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../dtds/dtd/technicalContent/dtd/reference.dtd">
+<reference id="A-50">
+  <title>Technical Specifications for Nano Bridge</title>
+  <refbody>
+    <properties>
+      <property>
+        <proptype>Category</proptype>
+        <propvalue>Sensor</propvalue>
+      </property>
+      <property>
+        <proptype>Voltage</proptype>
+        <propvalue>1.8V</propvalue>
+      </property>
+      <property>
+        <proptype>Protocol</proptype>
+        <propvalue>UART</propvalue>
+      </property>
+      <property>
+        <proptype>MaxSpeed</proptype>
+        <propvalue>1MHz</propvalue>
+      </property>
+      <property>
+        <proptype>ReleaseDate</proptype>
+        <propvalue>2023-11-01</propvalue>
+      </property>
+      <property>
+        <proptype>LeadEngineer</proptype>
+        <propvalue>M. Hamilton</propvalue>
+      </property>
+    </properties>
+  </refbody>
+</reference>

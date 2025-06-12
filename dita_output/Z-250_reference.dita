@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../dtds/dtd/technicalContent/dtd/reference.dtd">
+<reference id="Z-250">
+  <title>Technical Specifications for Quantum Link</title>
+  <refbody>
+    <properties>
+      <property>
+        <proptype>Category</proptype>
+        <propvalue>Transceiver</propvalue>
+      </property>
+      <property>
+        <proptype>Voltage</proptype>
+        <propvalue>5.0V</propvalue>
+      </property>
+      <property>
+        <proptype>Protocol</proptype>
+        <propvalue>SPI</propvalue>
+      </property>
+      <property>
+        <proptype>MaxSpeed</proptype>
+        <propvalue>50MHz</propvalue>
+      </property>
+      <property>
+        <proptype>ReleaseDate</proptype>
+        <propvalue>2025-01-15</propvalue>
+      </property>
+      <property>
+        <proptype>LeadEngineer</proptype>
+        <propvalue>G. Hopper</propvalue>
+      </property>
+    </properties>
+  </refbody>
+</reference>

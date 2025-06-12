@@ -1,0 +1,10 @@
+ProductID,ProductName,Category,Voltage,Protocol,MaxSpeed,ReleaseDate,LeadEngineer
+X-100,Photon Core,Microcontroller,3.3V,I2C,16MHz,2024-05-20,A. Turing
+Z-250,Quantum Link,Transceiver,5.0V,SPI,50MHz,2025-01-15,G. Hopper
+A-50,Nano Bridge,Sensor,1.8V,UART,1MHz,2023-11-01,M. Hamilton
+Y-330,Helios Processor,CPU,1.2V,PCIe,3.2GHz,2024-09-30,J. von Neumann
+B-7,Chrono Timer,Oscillator,3.3V,N/A,100MHz,2022-07-21,L. Lamport
+C-990,Volt-Guard,Regulator,5.0V,N/A,500KHz,2024-11-10,C. Shannon
+X-101,Photon Core Plus,Microcontroller,3.3V,I2C/SPI,32MHz,2025-03-18,A. Turing
+F-800,Ether-Stream,Network Interface,3.3V,Ethernet,1Gbps,2023-04-12,R. Metcalfe
+D-45,Data-Store,Flash Memory,2.5V,SPI,80MHz,2024-08-01,S. Wozniak

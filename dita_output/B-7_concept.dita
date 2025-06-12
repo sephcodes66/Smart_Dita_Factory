@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../dtds/dtd/technicalContent/dtd/concept.dtd">
+<concept id="B-7_summary">
+  <title>About the Chrono Timer</title>
+  <conbody>
+    <p>Meet the Chrono Timer, the new high-performance heart for your electronic projects. This powerful oscillator provides an incredibly precise timing pulse, reaching speeds up to a blazing-fast 100MHz. Designed for modern devices, it runs efficiently on a low 3.3V, making it the perfect combination of speed and power-saving performance.</p>
+  </conbody>
+</concept>

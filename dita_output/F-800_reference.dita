@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../dtds/dtd/technicalContent/dtd/reference.dtd">
+<reference id="F-800">
+  <title>Technical Specifications for Ether-Stream</title>
+  <refbody>
+    <properties>
+      <property>
+        <proptype>Category</proptype>
+        <propvalue>Network Interface</propvalue>
+      </property>
+      <property>
+        <proptype>Voltage</proptype>
+        <propvalue>3.3V</propvalue>
+      </property>
+      <property>
+        <proptype>Protocol</proptype>
+        <propvalue>Ethernet</propvalue>
+      </property>
+      <property>
+        <proptype>MaxSpeed</proptype>
+        <propvalue>1Gbps</propvalue>
+      </property>
+      <property>
+        <proptype>ReleaseDate</proptype>
+        <propvalue>2023-04-12</propvalue>
+      </property>
+      <property>
+        <proptype>LeadEngineer</proptype>
+        <propvalue>R. Metcalfe</propvalue>
+      </property>
+    </properties>
+  </refbody>
+</reference>

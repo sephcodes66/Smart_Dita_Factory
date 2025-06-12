@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "../dtds/dtd/technicalContent/dtd/reference.dtd">
+<reference id="D-45">
+  <title>Technical Specifications for Data-Store</title>
+  <refbody>
+    <properties>
+      <property>
+        <proptype>Category</proptype>
+        <propvalue>Flash Memory</propvalue>
+      </property>
+      <property>
+        <proptype>Voltage</proptype>
+        <propvalue>2.5V</propvalue>
+      </property>
+      <property>
+        <proptype>Protocol</proptype>
+        <propvalue>SPI</propvalue>
+      </property>
+      <property>
+        <proptype>MaxSpeed</proptype>
+        <propvalue>80MHz</propvalue>
+      </property>
+      <property>
+        <proptype>ReleaseDate</proptype>
+        <propvalue>2024-08-01</propvalue>
+      </property>
+      <property>
+        <proptype>LeadEngineer</proptype>
+        <propvalue>S. Wozniak</propvalue>
+      </property>
+    </properties>
+  </refbody>
+</reference>

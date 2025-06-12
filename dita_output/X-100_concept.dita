@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../dtds/dtd/technicalContent/dtd/concept.dtd">
+<concept id="X-100_summary">
+  <title>About the Photon Core</title>
+  <conbody>
+    <p>Introducing the Photon Core, the tiny but mighty brain for your next electronic creation! This powerful microcontroller operates at a speedy 16MHz, ensuring your projects are fast and responsive. Built for easy integration, it communicates seamlessly with other components and runs efficiently on just 3.3V, making it the perfect heart for any gadget you can imagine.</p>
+  </conbody>
+</concept>

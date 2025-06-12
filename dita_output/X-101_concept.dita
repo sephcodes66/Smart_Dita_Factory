@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../dtds/dtd/technicalContent/dtd/concept.dtd">
+<concept id="X-101_summary">
+  <title>About the Photon Core Plus</title>
+  <conbody>
+    <p>Meet the Photon Core Plus, the tiny yet mighty brain for your next creative project! This powerful microcontroller zips through tasks at an impressive 32MHz, while running on a very low 3.3V, making it both super-fast and energy-efficient. It's the perfect smart core to bring your electronic ideas to life, whether you're a hobbyist or a pro.</p>
+  </conbody>
+</concept>
