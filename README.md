@@ -1,10 +1,10 @@
-###Smart DITA Factory 🏭
+# Smart DITA Factory 🏭
 
-##Automate DITA content generation and validation with the power of AI and the DITA Open Toolkit.
+## Automate DITA content generation and validation with the power of AI and the DITA Open Toolkit.
 
 This project provides a complete workflow for automatically generating DITA concept and reference topics from structured product data. It leverages the Google Gemini API for intelligent content creation and uses the official DITA Open Toolkit (DITA-OT) for robust validation, ensuring your content is compliant and high-quality. A built-in visualization dashboard helps you instantly assess the results.
 
-#✨ Key Features
+### ✨ Key Features
 
 Automated DITA Generation: Creates DITA concept and reference topics from a simple product_specs.csv file (contains synthetic data).
 
@@ -16,7 +16,7 @@ Quality Reporting: Generates a quality_report.csv file with detailed validation 
 
 Interactive Dashboard: Includes a Streamlit-based web app to visualize the quality report, making it easy to see passes, failures, and overall trends.
 
-#Prerequisites:
+### Prerequisites:
 
 Python 3.8+
 
@@ -30,12 +30,12 @@ Google Gemini API Key: The script uses the Gemini API for content generation.
 
 Get a Gemini API key.
 
-#Step 1: Clone the Repository
+#### Step 1: Clone the Repository
 
 git clone https://github.com/your-username/smart-dita-factory.git
 cd smart-dita-factory
 
-#Step 2: Create a Virtual Environment (Recommended)
+#### Step 2: Create a Virtual Environment (Recommended)
 
 For macOS/Linux
 
@@ -49,7 +49,7 @@ python -m venv venv
 
 venv\Scripts\activate
 
-#Step 3: Install Python Dependencies
+#### Step 3: Install Python Dependencies
 
 pip install -r requirements.txt
 
@@ -61,7 +61,7 @@ lxml
 
 streamlit
 
-#Step 4: Set Up Your API Key
+#### Step 4: Set Up Your API Key
 
 Set your Google Gemini API key as an environment variable. This is a secure way to handle your credentials.
 
@@ -69,7 +69,7 @@ set GEMINI_API_KEY="YOUR_API_KEY_HERE" (Windows)
 
 export GEMINI_API_KEY="YOUR_API_KEY_HERE" (macOS/Linux)
 
-#Step 5: Verify DITA-OT Path
+#### Step 5: Verify DITA-OT Path
 
 Open smart_dita_factory.py and ensure the DITA_OT_DIR variable matches the name of your DITA Open Toolkit folder.
 
@@ -80,7 +80,7 @@ streamlit run visualize_output.py
 This will open a new tab in your web browser with the interactive quality report.
 
 
-#🔧 How It Works
+### 🔧 How It Works
 
 Data Ingestion: The smart_dita_factory.py script starts by reading the product_specs.csv into a Pandas DataFrame.
 
