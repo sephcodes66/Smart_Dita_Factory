@@ -11,21 +11,22 @@ This project provides a complete workflow for automatically generating DITA conc
 - Interactive Dashboard: Includes a Streamlit-based web app to visualize the quality report, making it easy to see passes, failures, and overall trends.
 
 ## Table of Contents
-1. [Prerequisites] Prerequisites
-2. [Installation] Installation and Setup
-3. [How] How It Works
-4. [References] References
+1. [Prerequisites](#Prerequisites) 
+2. [Installation and Setup](#InstallationandSetup)
+3. [How It Works](#How)
+4. [Output Image](#OutputImage)
+4. [References](#References)
 
-## Prerequisites
-1. Python 3.8+
-2. DITA Open Toolkit: This project requires a local installation of the DITA-OT.
+### 1. Prerequisites
+- Python 3.8+
+- DITA Open Toolkit: This project requires a local installation of the DITA-OT.
     - Download the DITA Open Toolkit (the script is configured for version 4.3.2, but you can adjust the path).
     - Unzip the folder and place it in the project's root directory.
-3. Google Gemini API Key: The script uses the Gemini API for content generation.
+- Google Gemini API Key: The script uses the Gemini API for content generation.
     - Get a Gemini API key.
 
 
-## Installation and Setup
+### 2. Installation and Setup
 1. Clone the Repository
 
     ```bash
@@ -71,7 +72,7 @@ This project provides a complete workflow for automatically generating DITA conc
     ```
     - This will open a new tab in your web browser with the interactive quality report.
 
-## How It Works
+### 3. How It Works
 - Data Ingestion: The smart_dita_factory.py script starts by reading the product_specs.csv into a Pandas DataFrame.
 - DITA Generation: For each row in the DataFrame, it generates two DITA files:
     - A <concept> topic using the product Description.
@@ -80,15 +81,15 @@ This project provides a complete workflow for automatically generating DITA conc
 - Validation: The script calls the DITA-OT command-line tool using a Python subprocess. This provides a highly accurate validation against the official DITA standard.
 - Reporting & Visualization: The results are compiled into quality_report.csv. The visualize_output.py script then uses Streamlit to create a web-based dashboard from this report. You can see an example screenshot at assets/dashboard_screenshot.png.
 
-## Output Image
+### 4. Output Image
 
 ![Dashboard Screenshot](https://github.com/sephcodes66/Smart_Dita_Factory/raw/main/assets/dashboard_screenshot.png)
 
-## References
-- DITA (Darwin Information Typing Architecture): OASIS DITA Standard
-- DITA Open Toolkit: dita-ot.org
-- Google Gemini API: Google AI for Developers
-- Python: python.org
-- Streamlit: streamlit.io
-- Pandas: pandas.pydata.org
-- lxml: lxml.de (Homepage link from PyPI)
+### 5. References
+- [DITA (Darwin Information Typing Architecture): OASIS DITA Standard](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita)
+- [DITA Open Toolkit](dita-ot.org)(https://www.dita-ot.org)
+- [Google Gemini API: Google AI for Developers](https://ai.google.dev)
+- [Python: python.org](https://www.python.org)
+- [Streamlit: streamlit.io](https://streamlit.io)
+- [Pandas: pandas.pydata.org](https://pandas.pydata.org)
+- [lxml: lxml.de (Homepage link from PyPI)](https://lxml.de)
