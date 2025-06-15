@@ -11,11 +11,11 @@ This project provides a complete workflow for automatically generating DITA conc
 - Interactive Dashboard: Includes a Streamlit-based web app to visualize the quality report, making it easy to see passes, failures, and overall trends.
 
 ## Table of Contents
-1. [Prerequisites](#Prerequisites) 
-2. [Installation and Setup](#InstallationandSetup)
-3. [How It Works](#How)
-4. [Output Image](#OutputImage)
-4. [References](#References)
+1. Prerequisites
+2. Installation and Setup
+3. How It Works
+4. Output Image
+5. References
 
 ### 1. Prerequisites
 - Python 3.8+
