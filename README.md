@@ -1,5 +1,5 @@
 # Smart DITA Factory 
-## Automate DITA content generation and validation with the power of AI and the DITA Open Toolkit.
+## Automate DITA content generation and validation with the power of AI and the DITA Open Toolkit
 
 This project provides a complete workflow for automatically generating DITA concept and reference topics from structured product data. It leverages the Google Gemini API for intelligent content creation and uses the official DITA Open Toolkit (DITA-OT) for robust validation. The results are displayed in a rich, interactive dashboard that makes it easy to assess content quality instantly.
 
