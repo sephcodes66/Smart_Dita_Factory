@@ -1,21 +1,26 @@
 # Smart DITA Factory 
 ## Automate DITA content generation and validation with the power of AI and the DITA Open Toolkit.
 
-This project provides a complete workflow for automatically generating DITA concept and reference topics from structured product data. It leverages the Google Gemini API for intelligent content creation and uses the official DITA Open Toolkit (DITA-OT) for robust validation, ensuring your content is compliant and high-quality. A built-in visualization dashboard helps you instantly assess the results.
+This project provides a complete workflow for automatically generating DITA concept and reference topics from structured product data. It leverages the Google Gemini API for intelligent content creation and uses the official DITA Open Toolkit (DITA-OT) for robust validation. The results are displayed in a rich, interactive dashboard that makes it easy to assess content quality instantly.
+
+## Output Visualizations
+
+![Dashboard Screenshot](https://github.com/sephcodes66/Smart_Dita_Factory/raw/main/assets/dashboard_ss1.png)
+![Dashboard Screenshot](https://github.com/sephcodes66/Smart_Dita_Factory/raw/main/assets/dashboard_ss2.png)
 
 ## Key Features
-### Automated DITA Generation: Creates DITA concept and reference topics from a simple product_specs.csv file.
-- AI-Powered Content: Integrates with the Google Gemini API to generate descriptive content.
-- Robust Validation: Uses the industry-standard DITA Open Toolkit (DITA-OT) for accurate and reliable validation.
-- Quality Reporting: Generates a quality_report.csv file with detailed validation status and error messages for each generated topic.
-- Interactive Dashboard: Includes a Streamlit-based web app to visualize the quality report, making it easy to see passes, failures, and overall trends.
+- Automated DITA Generation: Creates DITA <concept> and <reference> topics from a simple product_specs.csv file.
+- AI-Powered Content: Integrates with the Google Gemini API to generate descriptive, human-friendly content for concept topics.
+- Robust Validation: Uses the industry-standard DITA Open Toolkit (DITA-OT) for accurate and reliable validation against official DITA standards.
+- Quality Reporting: Generates a quality_report.csv file with detailed validation status (PASS/FAIL) and error messages for each generated topic.
+- Advanced Interactive Dashboard: Includes a Streamlit-based web app (visualize_output_improved.py) with interactive filters, KPI metrics, and Plotly charts to visually analyze the quality report.
+
 
 ## Table of Contents
 1. Prerequisites
 2. Installation and Setup
 3. How It Works
-4. Output Image
-5. References
+4. References
 
 ### 1. Prerequisites
 - Python 3.8+
@@ -66,7 +71,12 @@ This project provides a complete workflow for automatically generating DITA conc
 5. Verify DITA-OT Path
     - Open smart_dita_factory.py and ensure the DITA_OT_DIR variable matches the name of your DITA Open Toolkit folder.
 
-6. Run the Visualization App
+6. Run the Factory Script
+    ```bash
+    python smart_dita_factory.py
+    ```
+
+7. Run the Visualization App
     ```bash
     streamlit run visualize_output.py
     ```
@@ -81,11 +91,7 @@ This project provides a complete workflow for automatically generating DITA conc
 - Validation: The script calls the DITA-OT command-line tool using a Python subprocess. This provides a highly accurate validation against the official DITA standard.
 - Reporting & Visualization: The results are compiled into quality_report.csv. The visualize_output.py script then uses Streamlit to create a web-based dashboard from this report. You can see an example screenshot at assets/dashboard_screenshot.png.
 
-### 4. Output Image
-
-![Dashboard Screenshot](https://github.com/sephcodes66/Smart_Dita_Factory/raw/main/assets/dashboard_screenshot.png)
-
-### 5. References
+### 4. References
 - [DITA (Darwin Information Typing Architecture): OASIS DITA Standard](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita)
 - [DITA Open Toolkit](dita-ot.org)(https://www.dita-ot.org)
 - [Google Gemini API: Google AI for Developers](https://ai.google.dev)

@@ -1,8 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../dtds/dtd/technicalContent/dtd/concept.dtd">
-<concept id="A-50_summary">
-  <title>About the Nano Bridge</title>
-  <conbody>
-    <p>Meet the new Nano Bridge, a cutting-edge smart sensor designed for everyone from hobbyists to professionals. It's incredibly energy-efficient, operating on a mere 1.8V, and communicates seamlessly with other electronics. With the power to process information at a blazing-fast one million times per second, the Nano Bridge is the perfect tiny brain for your next big idea.</p>
-  </conbody>
-</concept>
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "../dtds/dtd/technicalContent/dtd/concept.dtd">
+        <concept id="A-50_summary">
+        <title>About the Nano Bridge</title>
+        <conbody>
+        <p>This is some content with an <b>unclosed tag that will cause a validation failure.
+        </p>
+        </conbody>
+        </concept>

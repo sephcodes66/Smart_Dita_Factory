@@ -64,13 +64,13 @@ def generate_reference_dita(product, output_dir):
 
     relative_dtd_path = f"../{DTD_PATH.replace(os.path.sep, '/')}"
     doctype = f'<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "{relative_dtd_path}">'
-    
+
     title = etree.SubElement(root, 'title')
     title.text = f"Technical Specifications for {product_name}"
 
     refbody = etree.SubElement(root, 'refbody')
     properties = etree.SubElement(refbody, 'properties')
-    
+
     for key, value in product.items():
         if key not in ['ProductID', 'ProductName']:
             property_elem = etree.SubElement(properties, 'property')
@@ -81,21 +81,46 @@ def generate_reference_dita(product, output_dir):
 
     tree = etree.ElementTree(root)
     file_path = os.path.join(output_dir, f"{product_id}_reference.dita")
-    
+
     with open(file_path, 'wb') as f:
         f.write(etree.tostring(tree, pretty_print=True, xml_declaration=True, encoding='UTF-8', doctype=doctype))
-        
+
     print(f"Generated DITA reference for {product_id}.")
     return file_path
 
 
-# --- PHASE 2: GENERATE CONCEPT DITA WITH GEMINI API ---
+# --- PHASE 2: GENERATE CONCEPT DITA WITH GEMINI API (with intentional errors) ---
 
 def generate_concept_dita(product, output_dir):
-    """Generates a DITA <concept> topic with an AI-powered summary."""
+    """Generates a DITA <concept> topic, intentionally failing for some products."""
     product_id = product['ProductID']
     product_name = product['ProductName']
-
+    file_path = os.path.join(output_dir, f"{product_id}_concept.dita")
+    
+    # *** REVISED MODIFICATION: Handle error cases separately ***
+    if product_id in ['A-50', 'F-800']:
+        print(f"Intentionally generating a broken DITA file for product {product_id}.")
+        
+        relative_dtd_path = f"../{CONCEPT_DTD_PATH.replace(os.path.sep, '/')}"
+        doctype = f'<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "{relative_dtd_path}">'
+        
+        # Intentionally generate a broken DITA file with an unclosed tag
+        raw_dita_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+        {doctype}
+        <concept id="{product_id}_summary">
+        <title>About the {product_name}</title>
+        <conbody>
+        <p>This is some content with an <b>unclosed tag that will cause a validation failure.
+        </p>
+        </conbody>
+        </concept>'''
+        
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(raw_dita_content)
+        
+        print(f"Generated intentionally broken AI concept for {product_id}.")
+        return file_path
+    
     prompt = f"""
     Based on the following technical specifications for the product '{product_name}', please write a user-friendly and engaging summary for a non-technical audience.
     The summary should be enclosed in a single <p> tag.
@@ -108,24 +133,19 @@ def generate_concept_dita(product, output_dir):
     """
 
     try:
-        model = genai.GenerativeModel('gemini-2.5-pro-preview-06-05')
+        model = genai.GenerativeModel('gemini-1.5-flash')
         response = model.generate_content(prompt)
         ai_content = response.text.strip()
 
         if not ai_content.startswith('<p>'):
             ai_content = f'<p>{ai_content}</p>'
         
-        try:
-            ai_paragraph_element = etree.fromstring(ai_content)
-        except etree.XMLSyntaxError:
-            print(f"Warning: AI output for {product_id} was not well-formed XML. Wrapping in a <p> tag.")
-            ai_paragraph_element = etree.Element('p')
-            ai_paragraph_element.text = response.text
+        ai_paragraph_element = etree.fromstring(ai_content)
             
     except Exception as e:
-        print(f"Error calling Gemini API for {product_id}: {e}")
+        print(f"Error during generation for {product_id}: {e}")
         ai_paragraph_element = etree.Element('p')
-        ai_paragraph_element.text = f"An AI-generated summary for the {product_name} could not be created at this time."
+        ai_paragraph_element.text = f"An AI-generated summary for the {product_name} could not be created at this time due to an error."
 
     root = etree.Element('concept')
     root.set('id', f"{product_id}_summary")
@@ -140,8 +160,7 @@ def generate_concept_dita(product, output_dir):
     conbody.append(ai_paragraph_element)
 
     tree = etree.ElementTree(root)
-    file_path = os.path.join(output_dir, f"{product_id}_concept.dita")
-    
+
     with open(file_path, 'wb') as f:
         f.write(etree.tostring(tree, pretty_print=True, xml_declaration=True, encoding='UTF-8', doctype=doctype))
         
@@ -156,11 +175,11 @@ def main():
         os.makedirs(OUTPUT_DIR_DITA)
     if not os.path.exists(OUTPUT_DIR_REPORT):
         os.makedirs(OUTPUT_DIR_REPORT)
-    
-    if GEMINI_API_KEY == "YOUR_GEMINI_API_KEY" or not GEMINI_API_KEY:
-        print("\nERROR: Gemini API Key is not set. Please edit the script to add your key.")
+
+    if not GEMINI_API_KEY or "YOUR_GEMINI_API_KEY" in GEMINI_API_KEY:
+        print("\nERROR: Gemini API Key is not set. Please set the GEMINI_API_KEY environment variable.")
         return
-        
+
     if not configure_gemini_api():
         return
 
@@ -170,7 +189,7 @@ def main():
         print(f"\nERROR: The file '{PRODUCT_SPECS_CSV}' was not found.")
         print("Please create it in the same directory as the script.")
         return
-        
+
     audit_results = []
     print(f"\nFound {len(products_df)} products. Starting generation and validation...")
 
@@ -178,6 +197,7 @@ def main():
         product_id = product['ProductID']
         print(f"\n--- Processing Product: {product_id} ---")
 
+        # Generate and validate Reference DITA
         ref_file_path = generate_reference_dita(product, OUTPUT_DIR_DITA)
         status, error = dita_ot_validate(ref_file_path, DITA_OT_DIR)
         audit_results.append({
@@ -190,6 +210,8 @@ def main():
         print(f"Validation for {os.path.basename(ref_file_path)}: {status}")
 
         time.sleep(1) 
+        
+        # Generate and validate Concept DITA
         concept_file_path = generate_concept_dita(product, OUTPUT_DIR_DITA)
         status, error = dita_ot_validate(concept_file_path, DITA_OT_DIR)
         audit_results.append({
@@ -206,9 +228,8 @@ def main():
     report_df.to_csv(QUALITY_REPORT_CSV, index=False)
     print(f"Successfully generated quality report: {QUALITY_REPORT_CSV}")
 
-    
     print("\n--- Smart DITA Factory Finished ---")
- 
+    print("The output .csv file is saved to the 'report' folder. Use 'streamlit run visualize_output.py' (or the improved version) to visualize the results.")
+
 if __name__ == "__main__":
     main()
-    print("The output .csv file is saved to report folder, use 'streamlit run visualize_output.py' to visualize the results")

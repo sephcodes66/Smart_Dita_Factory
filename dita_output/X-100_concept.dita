@@ -3,6 +3,6 @@
 <concept id="X-100_summary">
   <title>About the Photon Core</title>
   <conbody>
-    <p>Introducing the Photon Core, the tiny but mighty brain for your next electronic creation! This powerful microcontroller operates at a speedy 16MHz, ensuring your projects are fast and responsive. Built for easy integration, it communicates seamlessly with other components and runs efficiently on just 3.3V, making it the perfect heart for any gadget you can imagine.</p>
+    <p>Meet Photon Core (X-100), the tiny but mighty microcontroller perfect for your next project!  Launched May 20, 2024, this easy-to-use device packs a punch with its impressive speed and simple I2C communication, all while running on a standard 3.3V power supply.  Whether you're a seasoned pro or a curious beginner, Photon Core opens up a world of possibilities.</p>
   </conbody>
 </concept>
